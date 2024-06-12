@@ -18,15 +18,19 @@ def policy(obs):
 totals=[]
 
 
-for episode in range(1000):
+for episode in range(300):
     episode_rewards = 0
     obs = env.reset()
     for step in range(200):
         action = policy(obs)
         obs, reward, done, info = env.step(action)
         episode_rewards +=reward
+
         if done:
             break
+        else:
+            #Render almamak icin bura iptal
+            env.render()
     totals.append(episode_rewards)
 
 print(np.mean(totals),np.std(totals),np.min(totals),np.max(totals))
