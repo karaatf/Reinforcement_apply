@@ -21,7 +21,7 @@ for state, action in enumerate(possibleActions):
     q_values[state,action]=0.
     print(state,action)
 
-gamma=0.90
+gamma=0.95
 forSum = 0
 
 for iteration in range(50):
